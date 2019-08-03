@@ -6,7 +6,7 @@
 
 
 <input type="text" #myReff>
-  <button (click)="childMethodTosendData(myReff)">Click Me</button>
+  <button (click)="childMethodTosendData(myReff.value)">Click Me</button>
 
 <ul>
   <li *ngFor="let hm of myItem">
