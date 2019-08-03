@@ -1,0 +1,52 @@
+<h2>Products</h2>
+<div *ngFor="let product of productsVar; index as paraId">
+    <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', paraId]">
+      {{ product.name }}
+    </a>
+  </h3>
+
+    <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+   <button (click)="share()">
+    Share
+  </button>
+<br>
+
+
+
+
+</div>
+<app-product-alert (dataToParent)="eventHandler($event)" [StringExample]="emp" [childPrice]="product">
+</app-product-alert>
+<p >
+  
+  <!-- <b>Child data to Parent :{{recievedDataFromChild | json}} </b>  -->
+{{erroMsg}}
+</p>
+  <ul *ngIf="recievedDataFromChild">
+    <li *ngFor="let outData of recievedDataFromChild">
+        <b>{{outData.name | uppercase}}</b>
+    </li>
+  </ul>
+
+<!-- <ul>
+  <li *ngFor="let empList of emp">
+    {{empList.employee_name}}
+  </li>
+</ul> -->
+
+
+
+
+
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
